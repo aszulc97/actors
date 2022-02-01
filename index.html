@@ -8,10 +8,21 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <header>
+      <h1>Actors list</h1>
+      <hr />
+    </header>
     <div id="actorContainer">
       <template>
-        <h1 class="name"></h1>
-        <h2 class="movie"></h2>
+        <a href="">
+          <h1 class="name"></h1>
+          <h2 class="movie"></h2>
+        </a>
+        <div class="popUp hidden">
+          <h1></h1>
+          <h2></h2>
+          <button class="closeButton">Close</button>
+        </div>
       </template>
     </div>
   </body>
