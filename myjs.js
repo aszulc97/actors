@@ -16,8 +16,11 @@ function showPic(actor) {
   clone.querySelector(".name").textContent = actor.fullname;
   clone.querySelector(".movie").textContent = actor.movie;
 
-  const aEl = clone.querySelector("a");
-  aEl.addEventListener("click", showPopUp);
+  const nameEl = clone.querySelector(".name");
+  nameEl.addEventListener("click", showPopUp);
+
+  const movieEl = clone.querySelector(".movie");
+  movieEl.addEventListener("click", showPopUp);
 
   function showPopUp(e) {
     e.preventDefault();
@@ -27,7 +30,7 @@ function showPic(actor) {
     document.querySelector(".closeButton").addEventListener("click", closePopUp);
   }
 
-  const parent = document.querySelector("main");
+  const parent = document.querySelector("table");
   parent.appendChild(clone);
 }
 

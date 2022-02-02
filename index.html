@@ -13,19 +13,23 @@
       <hr />
     </header>
     <main>
-      <p>Full name</p>
-      <p>Movie</p>
-      <template>
-        <a href="">
-          <h1 class="name"></h1>
-          <h2 class="movie"></h2>
-        </a>
-        <div class="popUp hidden">
-          <h1></h1>
-          <h2></h2>
-          <button class="closeButton">Close</button>
-        </div>
-      </template>
+      <table>
+        <tr>
+          <th>Full name</th>
+          <th>Movie</th>
+        </tr>
+        <template>
+          <tr>
+            <td><a href="" class="name"></a></td>
+            <td><a href="" class="movie"></a></td>
+          </tr>
+        </template>
+      </table>
+      <div class="popUp hidden">
+        <h1></h1>
+        <h2></h2>
+        <button class="closeButton">Close</button>
+      </div>
     </main>
   </body>
   <script src="myjs.js"></script>
