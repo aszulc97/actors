@@ -27,7 +27,7 @@ function showPic(actor) {
     document.querySelector(".closeButton").addEventListener("click", closePopUp);
   }
 
-  const parent = document.querySelector("#actorContainer");
+  const parent = document.querySelector("main");
   parent.appendChild(clone);
 }
 
