@@ -13,7 +13,14 @@
       <hr />
     </header>
     <main>
-      <table>
+      <select id="select" onchange="dropdown()">
+        <option id="reset">Reset</option>
+        <option id="pulpFiction">Pulp Fiction</option>
+        <option id="fightClub">Fight Club</option>
+        <option id="goodfellas">Goodfellas</option>
+        <option id="inception">Inception</option>
+      </select>
+      <table id="table">
         <tr>
           <th>Full name</th>
           <th>Movie</th>

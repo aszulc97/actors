@@ -6,11 +6,15 @@ const options = {
   },
 };
 
+let allData = [];
 fetch(url, options)
   .then((response) => response.json())
-  .then((data) => data.forEach(showPic));
+  .then((data) => {
+    allData = data;
+    allData.forEach(showActors);
+  });
 
-function showPic(actor) {
+function showActors(actor) {
   const template = document.querySelector("template").content;
   const clone = template.cloneNode(true);
   clone.querySelector(".name").textContent = actor.fullname;
@@ -36,4 +40,51 @@ function showPic(actor) {
 
 function closePopUp() {
   document.querySelector(".popUp").classList.add("hidden");
+}
+
+function dropdown() {
+  var value = document.getElementById("select").options[select.selectedIndex].value;
+  console.log(value);
+
+  if (value === "Reset") {
+    deleteList();
+    allData.forEach(showActors);
+    console.log("hi");
+  } else {
+    filterMovie(value);
+  }
+}
+// document.querySelector("#pulpFiction").addEventListener("click", function () {
+//   filterMovie("Pulp Fiction");
+// });
+// document.querySelector("#fightClub").addEventListener("click", function () {
+//   filterMovie("Fight Club");
+// });
+// document.querySelector("#goodfellas").addEventListener("click", function () {
+//   filterMovie("Goodfellas");
+// });
+// document.querySelector("#inception").addEventListener("click", function () {
+//   filterMovie("Inception");
+// });
+
+function filterMovie(title) {
+  console.log(allData);
+  deleteList();
+  const filtered = allData.filter((oneActor) => {
+    if (oneActor.movie === title) {
+      return true;
+    } else {
+      return false;
+    }
+  });
+  console.log(filtered);
+  filtered.forEach(showActors);
+}
+
+function deleteList() {
+  console.log("deleted");
+  const myNode = document.getElementById("table");
+  while (myNode.childNodes.length > 3) {
+    myNode.removeChild(myNode.lastChild);
+  }
 }
